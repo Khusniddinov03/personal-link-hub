@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title id="meta-title">Otabek Xusniddinov — Frontend Engineer & Vibe Coder | Digital Hub</title>
+  <meta name="description" content="Otabek Xusniddinov — Junior Frontend Engineer & Vibe Coder. Zamonaviy veb-ilovalar, murakkab Telegram botlar, Mini Applar va yuqori darajadagi UI/UX yechimlar.">
+  <meta name="theme-color" content="#060911">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Otabek Xusniddinov — Digital Command Center & Link Hub">
+  <meta property="og:description" content="Zamonaviy veb-ilovalar va Telegram botlarni professional tarzda yarataman. Portfoliom, loyihalarim va barcha tarmoqlarim.">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. INTERAKTIV AMBIENT FON VA YULDUZLI TO'R -->
+  <div class="cosmos-bg" aria-hidden="true">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="cyber-grid"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- 2. YUQORI BOSHQARUV PANELI (STICKY GLASS HEADER) -->
+  <header class="glass-navbar">
+    <div class="navbar-inner">
+      <!-- Jonli Status & Terminal Vibe -->
+      <div class="brand-status" id="open-cmd-trigger" title="Tezkor qidiruv (Ctrl+K)">
+        <span class="pulse-ring-dot"></span>
+        <span class="mono-tag">otabek.dev</span>
+        <kbd class="cmd-shortcut">⌘K</kbd>
+      </div>
+
+      <!-- O'ng boshqaruv tugmalari: Til, Ovoz, QR, Mavzu, Ulashish -->
+      <div class="nav-actions">
+        <!-- Til almashtirgich (UZ / EN / RU) -->
+        <div class="lang-switcher" role="group" aria-label="Tilni tanlash">
+          <button class="lang-btn active" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+
+        <!-- Ovoz effektlari (Audio Haptics) -->
+        <button id="sound-toggle-btn" class="icon-btn active" aria-label="Ovoz effektlari" title="Interaktiv ovozlar">
+          <span id="sound-icon"></span>
+        </button>
+
+        <!-- QR Kod Modali -->
+        <button id="qr-modal-btn" class="icon-btn" aria-label="QR Kod" title="QR Kod orqali ochish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            <path d="M7 7h.01M17 7h.01M17 17h.01M7 17h.01" stroke-linecap="round"></path>
+          </svg>
+        </button>
+
+        <!-- Dark / Light Mode -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Mavzuni o'zgartirish" title="Dark / Light rejim">
+          <span id="theme-icon"></span>
+        </button>
+
+        <!-- Share / Ulashish -->
+        <button id="share-hub-btn" class="icon-btn primary-glow-btn" aria-label="Sahifani ulashish" title="Ulashish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. ASOSIY PLATFORM KONTEYNERI -->
+  <main class="hub-wrapper">
+
+    <!-- A) HERO PROFILE BENTO CARD -->
+    <section class="hero-bento glass-panel">
+      <!-- Yuqori dekorativ banner va real-vaqt soati -->
+      <div class="hero-banner">
+        <div class="banner-mesh"></div>
+        <div class="banner-meta">
+          <div class="location-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span id="location-text">Tashkent, UZ</span>
+          </div>
+          <div class="clock-pill">
+            <span class="clock-dot"></span>
+            <span id="live-clock" class="mono-clock">00:00:00 UTC+5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profil asosiy qismi -->
+      <div class="hero-content">
+        <div class="avatar-row">
+          <!-- Erkak kishi surati bilan 3D aylanuvchi neon halqa -->
+          <div class="avatar-master">
+            <div class="avatar-conic-ring"></div>
+            <div class="avatar-aura"></div>
+            <div class="avatar-inner">
+              <img id="profile-avatar" src="" alt="Otabek Xusniddinov" class="avatar-img" loading="eager">
+            </div>
+            <span class="status-online-badge" title="Online & Available"></span>
+          </div>
+
+          <!-- Tezkor aloqa amallari (vCard & Copy Email & CV) -->
+          <div class="hero-quick-ctas">
+            <button id="open-cv-btn" class="quick-cta-btn cta-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span data-i18n="btn_cv">Rezyume / CV</span>
+            </button>
+            <a href="#quick-project-section" class="quick-cta-btn cta-filled">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13"></path>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span data-i18n="btn_hire">Bog'lanish</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Ism va Verified nishoni -->
+        <div class="identity-block">
+          <div class="name-line">
+            <h1 id="profile-name" class="hero-name">Otabek Xusniddinov</h1>
+            <span class="verified-seal" title="Verified Developer & Creator">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
+              </svg>
+            </span>
+          </div>
+
+          <!-- Dinamik Typewriter Unvon -->
+          <div class="role-line">
+            <span class="role-prefix">&gt;_</span>
+            <span id="profile-title" class="role-title">Junior Frontend Engineer & Vibe coder</span>
+            <span class="typing-cursor">|</span>
+          </div>
+        </div>
+
+        <!-- Bio matni -->
+        <p id="profile-bio" class="hero-bio"></p>
+
+        <!-- Ish holati & Javob berish tezligi -->
+        <div class="availability-bar">
+          <div class="avail-badge">
+            <span class="avail-ping"></span>
+            <span id="status-text" class="avail-text">Loyihalar uchun ochiq</span>
+          </div>
+          <div class="response-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span id="response-time-text">Javob vaqti: ~15 daqiqa</span>
+          </div>
+        </div>
+
+        <!-- Ijtimoiy tarmoqlar tezkor Dock paneli -->
+        <div id="socials-container" class="socials-dock-bar"></div>
+      </div>
+    </section>
+
+    <!-- B) LIVE METRICS / BENTO STATISTIKA -->
+    <section class="metrics-bento" id="metrics-container" aria-label="Ko'rsatkichlar"></section>
+
+    <!-- C) INTERAKTIV FILTER TABLARI -->
+    <nav class="hub-tabs" role="tablist" aria-label="Bo'limlar">
+      <button class="tab-btn active" data-tab="all" role="tab" aria-selected="true">
+        <span data-i18n="tab_all">Barchasi</span>
+      </button>
+      <button class="tab-btn" data-tab="links" role="tab" aria-selected="false">
+        <span data-i18n="tab_links">Havolalar</span>
+      </button>
+      <button class="tab-btn" data-tab="projects" role="tab" aria-selected="false">
+        <span data-i18n="tab_projects">Loyihalar</span>
+      </button>
+      <button class="tab-btn" data-tab="services" role="tab" aria-selected="false">
+        <span data-i18n="tab_services">Xizmatlar</span>
+      </button>
+      <button class="tab-btn" data-tab="stack" role="tab" aria-selected="false">
+        <span data-i18n="tab_stack">Texnologiyalar</span>
+      </button>
+    </nav>
+
+    <!-- D) ASOSIY HAVOLALAR BO'LIMI (LINKS HUB) -->
+    <section class="hub-section" data-section="links">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-icon">🔗</span>
+          <h2 class="section-title" data-i18n="sec_links_title">Asosiy Havolalar & Tarmoqlar</h2>
+        </div>
+        <span class="section-badge" id="links-count-badge">5 ta havola</span>
+      </div>
+
+      <div id="links-container" class="links-bento-list" role="list"></div>
+    </section>
+
+    <!-- E) TANLANGAN LOYIHALAR (FEATURED PROJECTS SHOWCASE) -->
+    <section class="hub-section" data-section="projects">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-icon">🚀</span>
+          <h2 class="section-title" data-i18n="sec_projects_title">Tanlangan Mualliflik Loyihalarim</h2>
+        </div>
+        <a href="https://otabek-xusniddinov.vercel.app/" target="_blank" rel="noopener noreferrer" class="section-link">
+          <span data-i18n="view_all_portfolio">Barchasi</span> &rarr;
+        </a>
+      </div>
+
+      <div id="projects-container" class="projects-grid"></div>
+    </section>
+
+    <!-- F) XIZMATLAR VA YECHIMLAR (SERVICES & SOLUTIONS) -->
+    <section class="hub-section" data-section="services">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-icon">💎</span>
+          <h2 class="section-title" data-i18n="sec_services_title">Professional Xizmatlar</h2>
+        </div>
+        <span class="section-badge" data-i18n="sec_services_sub">Sifat kafolati</span>
+      </div>
+
+      <div id="services-container" class="services-grid"></div>
+    </section>
+
+    <!-- G) TEXNOLOGIYALAR STAKI & GITHUB ACTIVITY MATRIX -->
+    <section class="hub-section" data-section="stack">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-icon">⚡</span>
+          <h2 class="section-title" data-i18n="sec_stack_title">Texnik Arsenal & Kod Faolligi</h2>
+        </div>
+        <span class="section-badge">Vibe Stack</span>
+      </div>
+
+      <!-- Ko'nikmalar va darajalar -->
+      <div id="stack-container" class="stack-bento glass-panel"></div>
+
+      <!-- GitHub Contribution Vizualizatsiyasi -->
+      <div class="github-bento glass-panel">
+        <div class="gh-header">
+          <div class="gh-title-wrap">
+            <svg viewBox="0 0 24 24" class="gh-icon"><path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <div>
+              <h3 class="gh-title">@husniddinov03</h3>
+              <p class="gh-sub" data-i18n="gh_subtitle">Yillik kod yozish va commitlar faolligi</p>
+            </div>
+          </div>
+          <a href="https://github.com/husniddinov03/" target="_blank" rel="noopener noreferrer" class="gh-follow-btn">
+            <span data-i18n="gh_btn">GitHub Profil</span> &nearr;
+          </a>
+        </div>
+        <div id="gh-heatmap" class="gh-heatmap-grid" aria-hidden="true"></div>
+        <div class="gh-legend">
+          <span data-i18n="gh_less">Kam</span>
+          <span class="gh-cell lvl-0"></span>
+          <span class="gh-cell lvl-1"></span>
+          <span class="gh-cell lvl-2"></span>
+          <span class="gh-cell lvl-3"></span>
+          <span class="gh-cell lvl-4"></span>
+          <span data-i18n="gh_more">Ko'p</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- H) TEZKOR LOYIHA BUYURTMA QILISH & ALOQA VIDJETI -->
+    <section class="hub-section" id="quick-project-section">
+      <div class="contact-bento glass-panel">
+        <div class="contact-header">
+          <span class="contact-tag" data-i18n="contact_badge">TEZKOR ALOQA</span>
+          <h2 class="contact-title" data-i18n="contact_title">Yangi loyiha ustida ishlaymizmi?</h2>
+          <p class="contact-desc" data-i18n="contact_desc">Loyiha turini tanlang va 1 bosish orqali men bilan Telegram yoki Email orqali bog'laning.</p>
+        </div>
+
+        <form id="quick-contact-form" class="contact-form">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="client-name" data-i18n="form_name_label">Ismingiz</label>
+              <input type="text" id="client-name" placeholder="Masalan: Sardor" required>
+            </div>
+            <div class="input-group">
+              <label for="service-type" data-i18n="form_service_label">Xizmat yo'nalishi</label>
+              <select id="service-type">
+                <option value="Veb-sayt / Frontend ilova">🌐 Veb-sayt / Frontend ilova</option>
+                <option value="Telegram Bot / WebApp">🤖 Telegram Bot / Mini App</option>
+                <option value="UI/UX & Redesign">🎨 UI/UX & Redesign</option>
+                <option value="Hamkorlik / Job Offer">🤝 Hamkorlik / Job Offer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="client-msg" data-i18n="form_msg_label">Loyiha haqida qisqacha</label>
+            <textarea id="client-msg" rows="2" placeholder="Loyiha maqsadi, muddati yoki savolingiz..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-tg-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              <span data-i18n="form_send_tg">Telegram orqali yuborish</span>
+            </button>
+            <button type="button" id="copy-email-cta" class="copy-email-btn" title="xusniddinovotabek00@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span data-i18n="form_copy_email">Email nusxalash</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- I) FOOTER -->
+    <footer class="hub-footer">
+      <div class="footer-badges">
+        <span class="f-pill"><span class="dot-green"></span> 100/100 Lighthouse</span>
+        <span class="f-pill">Zero Dependencies</span>
+        <span class="f-pill">Vibe Engineered</span>
+      </div>
+      <p id="footer-text" class="footer-copy">© 2026 Otabek Xusniddinov. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+  </main>
+
+  <!-- 4. INTERAKTIV REZYUME / CV MODAL OYNASI -->
+  <div id="cv-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-window cv-window">
+      <div class="modal-top-bar">
+        <div class="modal-title-wrap">
+          <span class="status-dot-sm"></span>
+          <h3>Otabek_Xusniddinov_CV.pdf</h3>
+        </div>
+        <div class="modal-top-actions">
+          <button id="print-cv-btn" class="cv-action-btn" title="PDF sifatida saqlash / Chop etish">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>PDF / Print</span>
+          </button>
+          <button id="close-cv-btn" class="modal-close-icon" aria-label="Yopish">&times;</button>
+        </div>
+      </div>
+
+      <div class="cv-body" id="cv-printable-area">
+        <div class="cv-header-block">
+          <div>
+            <h2>Otabek Xusniddinov</h2>
+            <p class="cv-role">Junior Frontend Engineer & Telegram Bot Developer</p>
+          </div>
+          <div class="cv-contacts">
+            <span>📍 Toshkent, O'zbekiston</span>
+            <span>✉️ xusniddinovotabek00@gmail.com</span>
+            <span>🔗 t.me/Otabek_Khusniddinov</span>
+            <span>🌐 otabek-xusniddinov.vercel.app</span>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h4>Kasbiy Xulosa (Summary)</h4>
+          <p>Zamonaviy veb-ilovalar (React, Next.js, TypeScript) va biznes jarayonlarini avtomatlashtiruvchi mukammal Telegram botlar hamda Telegram Mini App'larni ishlab chiquvchi dasturchi. Toza arxitektura, yuqori tezlik va foydalanuvchiga qulay UI/UX yaratishga ixtisoslashgan.</p>
+        </div>
+
+        <div class="cv-section">
+          <h4>Amaliy Tajriba & Yo'nalishlar</h4>
+          <div class="cv-item">
+            <div class="cv-item-head">
+              <strong>Frontend Engineer & Telegram Bot Architect (Freelance / Independent)</strong>
+              <span>2024 — Hozirgacha</span>
+            </div>
+            <ul>
+              <li>Zamonaviy, responsive va SEO-optimallashgan veb-saytlar hamda Web-ilovalarni noldan ishlab chiqish;</li>
+              <li>Murakkab Telegram botlar, savdo va yetkazib berish WebApp tizimlarini (Node.js, Telegraf, Grammy) yaratish;</li>
+              <li>Sun'iy intellekt (AI) yordamida loyihalarni tezkor prototiplash va "Vibe Coding" metodologiyasi asosida sifatli mahsulot chiqarish.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h4>Texnik Ko'nikmalar</h4>
+          <div class="cv-skills-tags">
+            <span>HTML5 / Semantic Web</span>
+            <span>CSS3 / SCSS / Tailwind CSS</span>
+            <span>JavaScript (ES6+)</span>
+            <span>TypeScript</span>
+            <span>React.js / Next.js</span>
+            <span>Node.js</span>
+            <span>Telegram Bot API & Mini Apps</span>
+            <span>REST API & Git / GitHub</span>
+            <span>UI/UX & Responsive Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMMAND PALETTE MODAL (CTRL+K / CMD+K) -->
+  <div id="cmd-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-window cmd-window">
+      <div class="cmd-search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="cmd-input" placeholder="Buyruq yoki havolani qidiring... (Portfolio, Telegram, CV, Mavzu)" autocomplete="off">
+        <kbd class="esc-hint" id="close-cmd-btn">ESC</kbd>
+      </div>
+      <div id="cmd-results" class="cmd-list"></div>
+    </div>
+  </div>
+
+  <!-- 6. QR KOD MODAL OYNASI -->
+  <div id="qr-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-window qr-window">
+      <button id="close-qr-btn" class="modal-close-icon float-right" aria-label="Yopish">&times;</button>
+      <div class="qr-header">
+        <h3>Otabek Xusniddinov</h3>
+        <p>Smartfoningiz kamerasi orqali skanerlang</p>
+      </div>
+      <div class="qr-box">
+        <img id="qr-image" src="" alt="QR Code">
+      </div>
+      <button id="copy-modal-url-btn" class="qr-copy-btn">Havoladan nusxa olish</button>
+    </div>
+  </div>
+
+  <!-- 7. TOAST BILDIRISHNOMASI -->
+  <div id="toast" class="cyber-toast" role="alert" aria-live="assertive">
+    <span class="toast-pulse"></span>
+    <span id="toast-message">Havola nusxalandi!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
